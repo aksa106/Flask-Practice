@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>CoreHR ERP</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } </style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary": "#ffffff", "surface-container-highest": "#dae2fd", "primary-fixed-dim": "#b1c5ff", "on-tertiary-fixed-variant": "#2f2ebe", "surface-container-low": "#f2f3ff", "on-primary-fixed": "#001946", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#c0c1ff", "surface-container": "#eaedff", "surface-dim": "#d2d9f4", "surface-variant": "#dae2fd", "on-surface-variant": "#424655", "surface-tint": "#0057ce", "inverse-on-surface": "#eef0ff", "tertiary": "#484ad6", "primary-container": "#0d6efd", "on-primary": "#ffffff", "error-container": "#ffdad6", "outline": "#727787", "on-error": "#ffffff", "on-tertiary-container": "#ffffff", "tertiary-fixed": "#e1e0ff", "on-secondary-fixed-variant": "#3a485b", "on-surface": "#131b2e", "surface": "#faf8ff", "on-primary-fixed-variant": "#00419e", "secondary-fixed": "#d5e3fc", "tertiary-container": "#6265f0", "surface-bright": "#faf8ff", "on-error-container": "#93000a", "error": "#ba1a1a", "inverse-primary": "#b1c5ff", "on-tertiary": "#ffffff", "on-secondary-fixed": "#0d1c2e", "primary-fixed": "#dae2ff", "secondary-container": "#d5e3fc", "surface-container-high": "#e2e7ff", "secondary": "#515f74", "secondary-fixed-dim": "#b9c7df", "on-secondary-container": "#57657a", "on-primary-container": "#ffffff", "background": "#faf8ff", "outline-variant": "#c2c6d8", "inverse-surface": "#283044", "on-tertiary-fixed": "#07006c", "primary": "#0057cd", "on-background": "#131b2e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "space-md": "1rem", "space-2xl": "3rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "margin": "2rem", "space-xl": "2rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "label-sm": ["Inter"], "title-md": ["Inter"], "title-sm": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "data-tabular": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"] }, fontSize: { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "data-tabular": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-full selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container transition-colors active:scale-95" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="HR ERP Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UkDx2OJuF0WRO2GskfXnw9i3CUHWFlcDP0ztgf6z8ZacvwdzLtUtWZHxh-GeSPCklp_2txxOtgprORIqX5thID_9vLlJ0f_LhN22w1js7h2_bEi8UHAR2vuHUKHbpPUSZKOm5-7xS5vAZnerRu-9v0phe9OdnmULUsyU3Do9mgvuAKolJenC7tAEWuJENQjMd3uh2UJEk4r5KbTCevQS_t7BLJCwiy7HnFmesuOiyS"/><h1 class="font-title-md text-title-md text-on-surface tracking-tight truncate max-w-[170px]">About Us</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Contextual actions" class="w-11 h-11 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC04DoCdqsBbKvF8ciUpONw2JZP_Qq8ZTGSpoQwlBT87DBaSaPKP0Z6vEHKMjLsceUZm-4PIiCU8b-Ms-dXP89XP4V5VXDdYfSTmmKR_NWZLZkBKr8PjWQvILwCNpijAV92fgM1ZavzNS5-if4VnZBdI2mjmMkeubybDNTkN2kWdcywvPWGdJ0FRSfPCXI_KHNzGYHSOAbaw3Os54RHXS8oWYM8EPHRhiTj_cLRjHY"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-full"><div class="flex flex-col w-full px-gutter-mobile py-space-md space-y-space-md">
+<!-- Header Intro Banner -->
+<div class="relative overflow-hidden bg-primary text-on-primary rounded-xl p-space-lg shadow-sm">
+<div class="relative z-10 flex flex-col space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">info</span>
+        v1.0 Release
+      </div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-on-primary">
+        About CoreHR ERP
+      </h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">
+        Simplifying human resource operations for modern organizations.
+      </p>
+</div>
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary-container/40 rounded-full blur-2xl pointer-events-none"></div>
+</div>
+<!-- Project Overview Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Mini Project Mission</h3>
+</div>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+      CoreHR ERP was conceptualized to deliver an integrated, cohesive administrative platform bridging employee profiles, real-time clock-in metrics, leave validation flows, and automated month-end compensation records into a singular, intuitive system.
+    </p>
+<!-- Visual Banner Illustration -->
+<div class="mt-space-md relative rounded-lg overflow-hidden h-36 w-full">
+<img class="w-full h-full object-cover" data-alt="Modern collaborative enterprise office space with minimalist glass architecture, organized laptops, clean aesthetic, natural soft light, corporate blue color accents, highly organized atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2qxo3waKzTtNKI4rmy5tDkAg166GD7qm1xLezSsyCu66R4hf0tjAUyiUCvrlyl3k8NFCgiE55a84Ir_YQNAqs3w-xPCVd2tkrl8LwTWrZTgmPbIPPsccRn-4lM5eSc_QXGHaryhqEhc4E9M1iT1_tXvhpm4tVN6XfgJLozWWZ-zcDxnAT9mAwh9oaP_y4FB54vR-iM51Uafx1XSsER9ghXNz6XhnVYQontpjyuaE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent flex items-end p-space-sm">
+<span class="font-label-sm text-label-sm text-surface-container-lowest font-medium">Modular Architecture • 2025 Standard</span>
+</div>
+</div>
+</div>
+<!-- Core Highlights (3 Feature Cards) -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Key Capabilities</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">3 Highlights</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+            Fast &amp; Lightweight UI
+          </h4>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            Zero-bloat assets engineered with pure utility classes for instant transitions and low computational latency.
+          </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-tertiary flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+            Role-Based Access Control
+          </h4>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            Strict behavioral barriers isolating sensitive administrative payroll records from employee self-service tools.
+          </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary-container flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">devices</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+            Mobile-First Responsive Design
+          </h4>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            Fully fluid canvas gracefully scaling across warehouse floor hand-held terminals to multi-monitor HR suites.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Architecture & Tech Stack Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Architecture &amp; Tech Stack</h3>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+        Full Stack
+      </span>
+</div>
+<div class="space-y-space-md">
+<!-- Frontend -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">palette</span>
+            Frontend Layer
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">Client Tier</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+          HTML5 semantic markup, CSS3 custom design tokens, modern Bootstrap utilities, and flexbox grid systems.
+        </p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">HTML5</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">CSS3</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">Bootstrap 5</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">Responsive Flex</span>
+</div>
+</div>
+<!-- Logic -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">code</span>
+            Logic &amp; API
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">Controller</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+          Vanilla JavaScript ES6+ module state handling with extensible REST endpoint connectors for async fetch.
+        </p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">JavaScript (ES6+)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">REST API Ready</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">JSON Data Model</span>
+</div>
+</div>
+<!-- Backend / DB -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">database</span>
+            Backend &amp; Persistence
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">Persistence</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+          Relational SQL database schema modeled for seamless connectivity to Node.js (Express) or Python (FastAPI/Django).
+        </p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">SQL Database</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">Node.js / Python Ready</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Academic / Project Credits Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Project Credits</h3>
+<span class="font-label-sm text-label-sm text-secondary">Academic Mini Project 2025</span>
+</div>
+</div>
+<!-- Team & Mentors Info List -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-semibold text-label-sm">
+            T
+          </div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface">Core Development Team</div>
+<div class="font-body-sm text-body-sm text-secondary">Mini Project Group A-04</div>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+          Lead Authors
+        </span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary font-semibold text-label-sm">
+            S
+          </div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface">Academic Supervisor</div>
+<div class="font-body-sm text-body-sm text-secondary">Faculty Mentor / Dept. of CSE</div>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+          Advisor
+        </span>
+</div>
+</div>
+<!-- Interactive Delight / Heart Feedback Indicator -->
+<div class="flex items-center justify-between pt-space-xs text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+        Crafted with precision &amp; care
+      </span>
+<button aria-label="Support Project" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors active:scale-95" id="likeBtn">
+<span class="material-symbols-outlined text-[18px] text-error" id="likeIcon">favorite</span>
+<span class="font-label-sm text-label-sm font-semibold" id="likeCount">24</span>
+</button>
+</div>
+</div>
+<!-- Footer Micro Note -->
+<div class="text-center py-space-sm">
+<p class="font-label-sm text-label-sm text-secondary">
+      CoreHR Enterprise Resource Planning • MIT License • 2025
+    </p>
+</div>
+</div>
+<script>
+  (function() {
+    const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById('likeCount');
+    let count = 24;
+    let liked = false;
+
+    if (likeBtn && likeCount) {
+      likeBtn.addEventListener('click', function() {
+        if (!liked) {
+          count++;
+          likeCount.textContent = count;
+          liked = true;
+          likeBtn.classList.add('bg-error-container', 'text-on-error-container');
+        } else {
+          count--;
+          likeCount.textContent = count;
+          liked = false;
+          likeBtn.classList.remove('bg-error-container', 'text-on-error-container');
+        }
+      });
+    }
+  })();
+</script></main></body></html>

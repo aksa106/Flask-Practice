@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR ERP System</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    >
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>HR ERP System</h1>
+
+    </header>
+
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                HR ERP
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Admin Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- MAIN LAYOUT -->
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+            <!-- MAIN CONTENT -->
+
+            <main class="col-md-9 main-content">
+
+                <div class="welcome-box">
+
+                    <h2>
+                        Welcome to HR Enterprise Portal
+                    </h2>
+
+                    <p>
+                        Integrated Management System for
+                        Workforce Operations & Administration
+                    </p>
+
+
+                    <!-- METRICS -->
+
+                    <div class="row g-3 mt-3">
+
+
+                        <div class="col-md-6 col-lg-3">
+
+                            <div class="metric-card">
+
+                                <p>Total Staff</p>
+
+                                <h3>248</h3>
+
+                                <small>
+                                    +6 new this month
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-3">
+
+                            <div class="metric-card">
+
+                                <p>Present Today</p>
+
+                                <h3>231</h3>
+
+                                <small>
+                                    93.1% Attendance
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-3">
+
+                            <div class="metric-card">
+
+                                <p>Pending Leaves</p>
+
+                                <h3>12</h3>
+
+                                <small>
+                                    Requires review
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-3">
+
+                            <div class="metric-card">
+
+                                <p>Payroll Status</p>
+
+                                <h3>Ready</h3>
+
+                                <small>
+                                    Next: 30th Nov
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MODULES -->
+
+                <div class="module-box">
+
+                    <h3>
+                        <i class="bi bi-grid"></i>
+                        Module Operations
+                    </h3>
+
+                    <p>
+                        Select a module from the sidebar to
+                        access different HR operations.
+                    </p>
+
+
+                    <div class="row g-3">
+
+
+                        <div class="col-md-4">
+
+                            <div class="module-card">
+
+                                <i class="bi bi-person-badge"></i>
+
+                                <h5>
+                                    Staff Records
+                                </h5>
+
+                                <p>
+                                    Manage employee records,
+                                    contracts and roles.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="module-card">
+
+                                <i class="bi bi-calendar-check"></i>
+
+                                <h5>
+                                    Time & Attendance
+                                </h5>
+
+                                <p>
+                                    Manage attendance and
+                                    employee leave.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="module-card">
+
+                                <i class="bi bi-cash-stack"></i>
+
+                                <h5>
+                                    Payroll Processing
+                                </h5>
+
+                                <p>
+                                    Manage salary and
+                                    payroll information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </main>
+
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="col-md-3 sidebar">
+
+                <h2>
+                    Sidebar
+                </h2>
+
+                <p class="sidebar-subtitle">
+                    Management Menu
+                </p>
+
+
+                <ul class="sidebar-menu">
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-speedometer2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-people"></i>
+                            Employee Directory
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-calendar-check"></i>
+                            Attendance
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-calendar2-range"></i>
+                            Leave Management
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-receipt"></i>
+                            Payroll & Salary
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-diagram-3"></i>
+                            Departments
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-bar-chart"></i>
+                            ERP Reports
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-gear"></i>
+                            System Settings
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="system-status">
+
+                    <p>
+                        Server Node:
+                        <span>Active</span>
+                    </p>
+
+                    <p>
+                        ERP Version:
+                        <span>v1.0</span>
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 HR ERP System
+
+    </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>

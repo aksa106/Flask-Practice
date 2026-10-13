@@ -1,0 +1,35 @@
+Student Result Portal
+│
+├── Home
+├── Students
+├── Add Student
+├── Student Result
+└── About
+
+
+| Concept              | Where we'll use it          |
+| -------------------- | --------------------------- |
+| Flask app            | Entire project              |
+| Routes               | All pages                   |
+| GET                  | Viewing students/pages      |
+| POST                 | Adding student data         |
+| `request`            | Reading form data           |
+| HTML forms           | Add Student                 |
+| Jinja variables      | Display student information |
+| Jinja `if`           | Pass/Fail                   |
+| Jinja `for`          | Display multiple students   |
+| Jinja filters        | Formatting values           |
+| `url_for()`          | Navigation                  |
+| `redirect()`         | After submitting form       |
+| Templates            | All HTML                    |
+| Static CSS/Bootstrap | UI                          |
+
+
+Stage 1 → Revise Flask basics
+Stage 2 → Jinja variables
+Stage 3 → Jinja if/else
+Stage 4 → Jinja loops
+Stage 5 → Jinja filters
+Stage 6 → Forms + request
+Stage 7 → redirect + url_for
+Stage 8 → Combine everything
