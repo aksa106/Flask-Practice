@@ -3,41 +3,29 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+# Home Page
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("home.html")
 
 
-@app.route("/login"):
+# About Us Page
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+# Admin Login Page
+@app.route("/login")
 def login():
-    ooreturn render_template("login.html")
+    return render_template("login.html")
 
 
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html")
-
-
-@app.route("/employees")
-def employees():
-    return render_template("employees.html")
-
-
-@app.route("/departments")
-def departments():
-    return render_template("departments.html")
-
-
-@app.route("/attendance")
-def attendance():
-    return render_template("attendance.html")
-
-
-@app.route("/leave")
-def leave():
-    return render_template("leave.html")
+# Contact Us Page
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
