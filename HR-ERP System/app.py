@@ -52,6 +52,11 @@ def logout():
     return render_template("home.html")
 
 
+@app.route("/save")
+def savc():
+    return "Employee Registered Successfull "
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
