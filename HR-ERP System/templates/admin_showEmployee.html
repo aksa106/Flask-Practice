@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | HR ERP System</title>
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+     <!-- Header -->
+    <header class="site-header text-center">
+        <h1>HR ERP System</h1>
+    </header>
+
+     <!-- Navigation -->
+    <nav class="main-navigation">
+    <a href="{{ url_for('admin_dashboard') }}">Home</a>
+    <a href="{{ url_for('admin_addEmployee') }}">Add Employee</a>
+    <a href="{{ url_for('admin_showEmployee') }}">Show Employee</a>
+    <a href="{{ url_for('admin_searchEmployee') }}">Search Employee</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</nav>
+
+
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- Welcome Section -->
+        <section class="home-content">
+            <h2>Show Employee</h2>
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

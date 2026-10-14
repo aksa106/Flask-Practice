@@ -27,5 +27,32 @@ def contact():
     return render_template("contact.html")
 
 
+# Admin Dashboard
+@app.route("/admin_dashboard",methods =["GET","POST"])
+def admin_dashboard():
+    return render_template("admin_dashboard.html")
+
+
+@app.route("/admin_addEmployee")
+def admin_addEmployee():
+    return render_template("admin_addEmployee.html")
+
+@app.route("/admin_showEmployee")
+def admin_showEmployee():
+    return render_template("admin_showEmployee.html")
+
+
+@app.route("/admin_searchEmployee")
+def admin_searchEmployee():
+    return render_template("admin_searchEmployee.html")
+
+# Logout
+@app.route("/logout")
+def logout():
+    return render_template("home.html")
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
+
