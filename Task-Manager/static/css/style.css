@@ -1,0 +1,289 @@
+/*GLOBAL STYLES-- font family -- poppins */
+body{
+    font-family: 'Poppins','sans-serif';  /*default font family*/
+    color: #495057; /**DEFAULT FONT-COLOR*/
+    background-color: #f8faf9;
+    margin:0;   /*usually margin 0 to remove browser def*/   
+}
+
+/*--------------------------------
+     NAVBAR
+
+     ul is block element and li is also block.
+
+     1. so first i applied styling on #navbar why , #navbar is parent to nav-links and anchor tags, nav-links and anchor tags both are children and Content of parent container.
+
+     so i set backg-color and padding --> top&bottom --15px  left and right -- 40px
+
+
+     2. then i targetted .nav-links , gave them diaply flex , main axis - row , justify content - flex end  , gap=30px
+
+     since ul and li are blocke elements , so browsers give ul and li defualt margin and padding which addds unwanted space around the list , 
+     setting both to 0 avoids extra space so your flexbox algns perfect;ly
+
+    3. so i turned the <ul> into a flex container, aligned the <li> items horizontally to the right with space between them, and removed default list styles and spacing. Then you styled the links with colors, font, and hover effect.
+---------------------------------*/
+
+#navbar{
+    background-color: #d0ebff;
+    padding:15px 40px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    gap:30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #339af0;
+    font-weight: 500;
+    font-size:18px ;   
+}
+
+.nav-links a:hover{
+    color:  #1c7ed6;
+}
+
+
+/*-------------------------------------
+HERO SECTION 
+
+
+
+
+
+
+---------------------------------------*/
+#hero{
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+.hero-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.hero-text{
+    flex: 1 1 400px;
+}
+
+.hero-text h1{
+    font-size: 62px;
+    font-weight: 700;
+    color: #1c7ed6;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #495057;
+    margin-bottom:20px;
+
+}
+
+.hero-text button{
+    font-family: 'Poppins';
+    font-size:17px ;
+    font-weight: 500 ;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: #339af0; 
+    color: white; 
+   
+}
+
+.hero-text button:hover{
+    background-color:#1c7ed6;
+    color:brown;
+}
+
+
+.hero-button {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: #339af0;
+    color: white;
+}
+
+.hero-button:hover {
+    background-color: #1c7ed6;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------
+TASK FORM SECTOION
+
+
+
+
+
+-------------------------------*/
+
+#task-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:50px 20px;
+}
+
+.form-container{
+    max-width: 800px;
+    width: 100%;
+}
+
+form{
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+
+}
+
+fieldset{
+    border:1px solid  #339af0;
+    border-radius: 8px;
+    background-color: rgba(208, 235, 255, 0.3); /* transparent blue */;
+    padding:20px;
+    margin-bottom: 20px;
+
+}
+
+legend{
+    color:#339af0;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+label{
+    display:block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color:#495057;
+}
+
+input,select,textarea{
+    width: 90%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid  #ccc;
+    font-size:16px;
+    font-family: 'Poppins';
+
+}
+
+button.submit-btn {
+    display: block;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 500;
+    border:none;
+    border-radius: 10px;
+    background-color:#339af0 ;
+    color:white;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin:20px auto 0;
+
+}
+
+button.submit-btn:hover{
+    background-color: #1c7ed6;
+
+}
+
+/*------------------------
+TASK DISPLAY SECtionm
+
+-------------------------*/
+
+#task-display{
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#task-display h2{
+    font-size:40px;
+    letter-spacing: -1px;
+}
+
+.task-item{
+    background-color: white;
+    border:1px solid #d0ebff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 700px;
+    margin:20px auto ;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+
+}
+
+.task-item h4{
+    color: #1c7ed6;
+    margin-bottom: 10px ;
+    font-size:28px;
+}
+.task-item p{
+    color: #495057;
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 1.5;
+}
+
+/*-----------------------------
+
+FOOTER
+
+------------------------------*/
+
+
+#footer{
+    background-color: #d0ebff; 
+    padding:20px 0;
+    text-align: center;
+}
+  
+#footer p{
+    font-size:18px;
+    margin:5px 0;
+    font-weight: 500;
+    line-height: 1.5;
+
+}
+
+@media (max-width: 600px) {
+    .hero-text h1 {
+        font-size: 42px;
+    }
+}
+

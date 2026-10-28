@@ -1,0 +1,13 @@
+| Milestone | What we'll build                                                 | Technologies involved           |
+| --------- | ---------------------------------------------------------------- | ------------------------------- |
+| M0        | Understand the existing project and Flask request-response cycle | Flask                           |
+| M1        | Make the task display dynamic                                    | Jinja2                          |
+| M2        | Learn SQL and create the database schema                         | SQLite                          |
+| M3        | Create models and perform CRUD operations                        | Flask-SQLAlchemy                |
+| M4        | Connect your existing form to the database                       | Flask, Jinja2, Flask-SQLAlchemy |
+| M5        | Add registration and password verification                       | Werkzeug, Flask-SQLAlchemy      |
+| M6        | Implement login sessions and protected routes                    | Flask-Login                     |
+| M7        | Associate tasks with users                                       | Flask-SQLAlchemy, Flask-Login   |
+| M8        | Add editing, deletion, completion status, and filtering          | All relevant technologies       |
+| M9        | Validate forms, handle errors, and improve security              | Flask and supporting libraries  |
+| M10       | Refactor the project and test the complete application           | All technologies                |

@@ -1,0 +1,28 @@
+             USER
+              |
+              v
+       HTML FORM
+       index.html
+              |
+              v
+        FLASK ROUTE
+          app.py
+              |
+              v
+    FLASK-SQLALCHEMY
+      Python ORM
+              |
+              v
+          SQLITE
+       Database file
+              |
+              v
+       Task is saved
+              |
+              v
+       FLASK + JINJA2
+       Render updated HTML
+              |
+              v
+       TASK DISPLAYED
+        TO THE USER
