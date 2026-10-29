@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block page_title %}Task Manager{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('add_task') }}">Add Task</a></li>
+                <li><a href="{{ url_for('view_task') }}">View Tasks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page-specific content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <p>@ 2026 Task Manager</p>
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,73 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Task</title>
-      <link rel="stylesheet" href ="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-      <header id="hero">
+{% block page_title %}
+Add Task | Task Manager
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<header id="hero">
     <div class="hero-container">
-    <div class="hero-text">
-    
-    <h1>Add Your Tasks</h1>
-    
-    
-    
+        <div class="hero-text">
+            <h1>Add Your Tasks</h1>
+        </div>
     </div>
-    </div>
-    </header>
+</header>
 
-     <main>
+<!-- Form Section -->
+<section id="task-form">
+    <div class="form-container">
 
-        <!--FORM SECTION OF PAGE-->
-    <section id="task-form">
-        <div class="form-container">
         <form>
-    <fieldset class="task-details">
-        <legend>Task Details</legend>
+            <fieldset class="task-details">
+                <legend>Task Details</legend>
 
-        <div class="field-group">
-        <label for="text">Task name : </label>
-       <input type="text" id="text" name="text" placeholder="Enter title">
-        </div>
+                <div class="field-group">
+                    <label for="text">Task name:</label>
+                    <input
+                        type="text"
+                        id="text"
+                        name="text"
+                        placeholder="Enter title"
+                    >
+                </div>
 
-        <div class="field-group">
-        <label for="desc">Text description : </label>
-        <textarea id="desc" name="desc" placeholder="Enter task description"></textarea>
-        </div>
+                <div class="field-group">
+                    <label for="desc">Task description:</label>
+                    <textarea
+                        id="desc"
+                        name="desc"
+                        placeholder="Enter task description"
+                    ></textarea>
+                </div>
 
-        <div class="field-group">
-        <label for="priority">Priority : </label>
-        <select id="priority" name="priority">
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select>
-        </div>
+                <div class="field-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
 
-        <div class="field-group">
-        <label for="date">due_date : </label>
-        <input type="date" id="date" name="date" placeholder="Enter due_date">
-        </div>
-    </fieldset>
-    <button type="submit" class="submit-btn">Add Task</button>
-    </form>
+                <div class="field-group">
+                    <label for="date">Due date:</label>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                    >
+                </div>
+
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Add Task</button>
+        </form>
+
     </div>
+</section>
 
-    </section>
-
-    </main>
-
-    <!--Footer section-->
-    <footer id="footer">
-        <div class="footer-container">
-        <p>@ 2026 Task Manager</p>
-        <p>All rights reserved</p>
-        </div>
-    </footer>
-    
-</body>
-</html>
+{% endblock %}
