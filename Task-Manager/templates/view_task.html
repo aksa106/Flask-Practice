@@ -22,7 +22,7 @@ View Tasks | Task Manager
 
     {% for task in tasks %}
         <article class="task-item">
-            <h4>Task {{ task.id }}</h4>
+            <h4>Task : {{ task.id }}</h4>
             <p>Title: {{ task.title }}</p>
             <p>Description: {{ task.description }}</p>
             <p>Priority: {{ task.priority }}</p>
@@ -31,6 +31,9 @@ View Tasks | Task Manager
     {% else %}
         <p>No tasks available. Add your first task!</p>
     {% endfor %}
+
+
+ 
 
 </section>
 

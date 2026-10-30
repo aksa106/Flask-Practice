@@ -19,7 +19,7 @@ Add Task | Task Manager
 <section id="task-form">
     <div class="form-container">
 
-        <form>
+        <form action="{{url_for('add_task')}}" method="POST">
             <fieldset class="task-details">
                 <legend>Task Details</legend>
 
@@ -27,7 +27,7 @@ Add Task | Task Manager
                     <label for="text">Task name:</label>
                     <input
                         type="text"
-                        id="text"
+                        id="Nametxt"
                         name="text"
                         placeholder="Enter title"
                     >
