@@ -1,26 +1,12 @@
-from flask import Flask, render_template, request
-from flask_mysqldb import MySQL
+import sqlite3
+from pathlib import Path
+
+from flask import Flask, render_template, request, redirect, url_for
+
 
 app = Flask(__name__)
 
-app.secret_key = 'xq2a94cv'
-
-app.config['MYSQL_HOST'] = 'localhost'
-
-app.config['MYSQL_USER'] = 'root'
-
-app.config['MYSQL_PASSWORD'] = ''
-
-app.config['MYSQL_DB'] = 'hr_erp_db'
-
-mysql = MySQL(app)  #This is an object created from class mysql
-
-##-------------------------------------------------
-
-
-
-
-
+DB_PATH = Path(__file__).resolve().parent/"employee.db"
 
 
 
@@ -76,6 +62,8 @@ def logout():
 @app.route("/save", methods=['POST'])
 def save():
 
+   
+
     empId = request.form['txtEmpId']
     name = request.form['txtname']
     email = request.form['txtemail']
@@ -83,17 +71,27 @@ def save():
     designation = request.form['txtdesignation'] 
     salary = request.form['txtsalary']
 
-    #Database connection
-    cur = mysql.connection.cursor()
 
-    #Query specification
-    cur.execute('insert into registration(EmpID, empname, email, mobile, Designation, Salary) values(%s, %s, %s, %s, %s, %s)',(empId, name, email, mobile, designation, salary))
+        ## Establish Databasea connection
 
-    #Transactions saved 
-    mysql.connection.commit()
+    connection = sqlite3.connect(DB_PATH)
 
-    #Database connection closed
-    cur.close()
+    connection.execute("""
+    INSERT INTO employee_new (EmpID, name, email, mobile, designation, salary)
+    SELECT EmpID, name, email, mobile, designation, salary
+    FROM employee
+    """)    
+
+    connection.commit()
+    connection.close()
+
+
+
+
+
+
+
+
 
 
     return render_template('admin_registrationSuccess.html')
