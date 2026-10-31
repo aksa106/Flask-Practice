@@ -48,21 +48,58 @@ connection = sqlite3.connect(db_path)
 
 ###-----------------------------------------------
 
+#                  UPDATE
 
-connection.close()
-
-
-
+######################################################
 
 
 
-
-
-
+# UPDATE table_name
+# SET column_name = value 
+# WHERE condition
 
 
 
 
+# cursor3 = connection.execute("UPDATE tasks SET priority = ? WHERE id = ?", ("High", 1))
+
+# connection.commit()
+
+
+
+# cursor4 = connection.execute("Select * from tasks where id = ?", (1,))
+
+# update = cursor4.fetchall()
+
+# print(update)
+
+
+########################################################
+
+#                DELETE
+
+########################################################
+
+
+# DELETE FROM table_name
+# WHERE condition;
+
+
+## delete task with id = 3 
+
+# connection.execute("DELETE FROM tasks WHERE id = ?", (3,))
+
+
+
+# connection.commit()
+
+
+
+# cursor5 = connection.execute("select id from tasks")
+
+# delete = cursor5.fetchall()
+
+# print(delete)
 
 
 
@@ -73,6 +110,4 @@ connection.close()
 
 
 
-
-
-
+# connection.close()
