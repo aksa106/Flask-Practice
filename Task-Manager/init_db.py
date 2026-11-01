@@ -17,6 +17,11 @@ connection.execute("""
     )
 """)
 
+
+cursor = connection.execute("PRAGMA table_info(tasks)")
+print(cursor.fetchall())
+
+
 connection.commit()
 
 # Verify the table exists

@@ -20,6 +20,81 @@ View Tasks | Task Manager
 <section id="task-display">
     <h3>Your Tasks</h3>
 
+    <fieldset>
+        <form action="{{ url_for('view_task') }}" method="GET">
+            <input type="text" name="search" placeholder="Search tasks" value="{{ search }}">
+
+            <button type="submit">Search</button>
+        </form>
+    </fieldset>
+
+
+
+
+
+    <fieldset>
+        <legend>Filter your tasks by Status</legend>
+
+        <form action="{{url_for('view_task')}}" method="GET">
+
+            <select name="status">
+                <option value="">All Stasuses</option>
+                <option value="Pending" {% if status=='Pending' %}selected{% endif %}>Pending</option>
+                <option value="In Progress" {% if status=='In Progress' %}selected{% endif %}>In Progress</option>
+                <option value="Completed" {% if status=='Completed' %}selected{% endif %}>Completed</option>
+            </select>
+            <button type="submit">Filter</button>
+
+        </form>
+
+    </fieldset>
+
+
+
+<!-- SORT TASKS ---------------------------------------- -->
+
+    <fieldset>
+        <legend>Sort your Tasks</legend>
+
+        <input type="hidden" name="search" value="{{ search }}">
+        <input type="hidden" name="status" value="{{ status }}">
+
+
+        <form>
+            <select name="sort">
+                <option value="">Default order</option>
+                <option value="due_asc" {% if sort == 'due_asc' %}selected{% endif %}>Due Date (Earliest First)</option>
+
+<option value="due_desc" {% if sort == 'due_desc' %}selected{% endif %}>Due Date (Latest First)</option>
+
+<option value="priority" {% if sort == 'priority' %}selected{% endif %}>Priority (High to Low)</option>
+                
+            </select>
+             <button type="submit">Sort</button>
+        </form>
+
+
+
+
+
+
+
+    </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {% for task in tasks %}
         <article class="task-item">
             <h4>Task : {{ task.id }}</h4>
@@ -27,6 +102,7 @@ View Tasks | Task Manager
             <p>Description: {{ task.description }}</p>
             <p>Priority: {{ task.priority }}</p>
             <p>Due Date: {{ task.due_date }}</p>
+            <p>Status : {{task.status}}</p>
 
             <a href="{{url_for('update_task', task_id=task.id)}}">Edit</a>
 
