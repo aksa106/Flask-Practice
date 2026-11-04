@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>{% block page_title %}Task Manager{% endblock %}</title>
+
+    <!-- BOOSTRAP CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CUSTOM CSS -->
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+
+    <!-- FONT : POPPINS  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- NAVBAR WILL BE DISPLAYED FOR EVERY PAGE -->
+    <nav id="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('add_task') }}">Add Tasks</a></li>
+                <li><a href="{{ url_for('view_task') }}">View Tasks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- 
+    PAGE SPECIFIC CONTENT -->
+
+    <main>
+    {% block content %}
+
+    {% endblock %}
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-container">
+            <p>@2026 Task Manager</p>
+            <p>All rights reserverd</p>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

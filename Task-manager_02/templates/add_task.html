@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block page_title %} Add Task | Task Manager {% endblock %}
+
+
+    {% block content %}
+
+
+    <!-- HEADER / HERO  -->
+
+    <header id="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Add Your Tasks</h1>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- FORM SECTION -->
+        <section id="task-form">
+        <div class="form-container">
+            <form action="{{url_for('add_task')}}" method="POST">
+
+            <fieldset class="task-details">
+
+                <legend>Add Your Tasks</legend>
+
+
+                    <div class="field-group">
+                        <label>Title : </label>
+                        <input type="text" name="title" id="title" placeholder="Enter your task's title">
+                    </div>
+
+
+
+
+                    <div class="field-group">
+                        <label>Description : </label>
+                        <textarea  name="desc" id="desc" placeholder="Enter your task's description"></textarea>
+                    </div>
+
+
+
+
+                    <div class="field-group">
+                        <label>Priority : </label>
+                        <select name="priority" id="priority" >
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+
+
+
+                    <div class="field-group">
+                        <label>Due Date : </label>
+                        <input type="date" name="date" id="date">
+                    </div>
+
+
+                    <div class="field-group">
+                        <label for="status">Status : </label>
+                        <select id="status" name="status">
+                            <option value="Pending">Pending</option>
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+
+
+
+                </fieldset>
+
+                <button type="submit">Add Task</button>
+
+
+
+            </form>
+
+        </div>
+        </section>
+
+    {% endblock %}

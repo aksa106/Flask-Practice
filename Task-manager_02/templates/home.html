@@ -1,11 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block page_title %} Home | Task-Manager {% endblock %}
+
+
+{% block content %}
+    <!-- HERO SECTION -->
+    <header id="hero">
+        <div class="hero-container">
+        <div class="hero-text">
+        <h1>Welcome to Task Manager!!!</h1>
+        <p>Organise your tasks, Stay Productive, Never miss a deadline</p>
+
+        <form action="{{url_for('add_task')}}" method="GET"><button>Your First Task</button></form>
+        
+        <p>Track your tasks, set priorities, achieve your goals</p>
+        </div>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
