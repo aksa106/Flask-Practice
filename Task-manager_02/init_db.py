@@ -3,9 +3,9 @@ from pathlib import Path
 
 
 
-#######################################################################
+# #######################################################################
 
-#             MAKING DB PATH ABSSOLUTE AND CRETAING A DATABASE : tasks.db
+# #             MAKING DB PATH ABSSOLUTE AND CRETAING A DATABASE : tasks.db
 
 
 
@@ -20,15 +20,15 @@ print("Database initialized successfully:", db_path)
 
 
 
-#######################################################################
+# #######################################################################
 
 
 
-#               CREATING A TABLE : tasks
+# #               CREATING A TABLE : tasks
 
 
 
-#######################################################################
+# #######################################################################
 
 
 connection.execute(""" 
@@ -47,142 +47,190 @@ connection.execute("""
 """)
 
 
-#         [COMMITING TO TABLE : tasks]
+# #         [COMMITING TO TABLE : tasks]
 
 
+
+connection.commit()
+
+
+
+
+# #######################################################################
+
+
+# #                       INSERTING RECORDS 
+
+
+# #######################################################################
+
+
+# connection.execute(
+#     """
+#     INSERT INTO tasks(title, description, priority, due_date, status)
+#     VALUES(?,?,?,?,?)
+#     """, ('Learn Flask','Practice sqlite3','High','05-11-2026','In Progress')
+# )
+
+
+
+# #                    [] COMMITTING TO INSERTED RECORDS]
+
+
+
+# #connection.commit()
+
+
+
+# #######################################################################
+
+# #                ALTER TABLE (making changes in table schema)
+
+# #######################################################################
+
+
+
+# # Add a new column
+
+# connection.execute(
+#     """
+#     ALTER TABLE tasks
+#     ADD COLUMN created_at TEXT
+
+#     """
+# )
+
+# #                    COMMITING TO ALTERED RECORDS 
 
 # connection.commit()
 
 
 
+# #######################################################################
 
-#######################################################################
+# #                      DELETING A COLUMN 
 
 
-#                       INSERTING RECORDS 
+# #Delete the newly added column 
 
+# connection.execute("""
 
-#######################################################################
+# ALTER TABLE tasks 
+# DROP COLUMN created_at
 
 
-connection.execute(
-    """
-    INSERT INTO tasks(title, description, priority, due_date, status)
-    VALUES(?,?,?,?,?)
-    """, ('Learn Flask','Practice sqlite3','High','05-11-2026','In Progress')
-)
+#     """)
 
+# #                committing to changes
 
+# connection.commit()
 
-#                    [] COMMITTING TO INSERTED RECORDS]
+# #######################################################################
 
+# #                  RERIEVING RECORDS / READING 
 
+# #######################################################################
 
-#connection.commit()
 
+# cursor = connection.execute("Select * from tasks")
 
+# for task in cursor.fetchall():
+#     print(task)
 
-#######################################################################
+# print(cursor.fetchmany(1))
 
-#                ALTER TABLE (making changes in table schema)
 
-#######################################################################
 
+# #######################################################################
 
 
-# Add a new column
+# #                CLOSING CONNECTION 
 
-connection.execute(
-    """
-    ALTER TABLE tasks
-    ADD COLUMN created_at TEXT
+# #######################################################################
 
-    """
-)
 
-#                    COMMITING TO ALTERED RECORDS 
 
-connection.commit()
+# connection.close()
 
 
+# #----------------------------------------------------------------------
 
-#######################################################################
 
-#                      DELETING A COLUMN 
 
 
-#Delete the newly added column 
+# #######################################################################
 
-connection.execute("""
+# #                     PRACTICING ROLLBACK
 
-ALTER TABLE tasks 
-DROP COLUMN created_at
+# #######################################################################
 
+# connection.execute(
+#     """
+#     INSERT INTO tasks(title, description, priority, due_date, status)
+#     VALUES(?,?,?,?,?)
+#     """,
+#         ('Learn Flask', 'Practice rollback', 'High', '2026-11-05','Pending')
+#     )
 
-    """)
 
-#                committing to changes
+# print("BEFORE ROLL BACK : ")
+# print()
 
-connection.commit()
+# print(connection.execute("Select * from tasks").fetchall())
 
-#######################################################################
+# print()
 
-#                  RERIEVING RECORDS / READING 
+# connection.rollback()
 
-#######################################################################
+# print("AFTER ROLL BACK : ")
+# print()
 
+# print(connection.execute("select * from tasks").fetchall())
 
-cursor = connection.execute("Select * from tasks")
 
-for task in cursor.fetchall():
-    print(task)
+# connection.close()
 
-print(cursor.fetchmany(1))
 
 
 
-#######################################################################
+# #-----------------------------------------------------------------------
 
 
-#                CLOSING CONNECTION 
 
-#######################################################################
+# # Important rules
+# # Rollback only undoes changes made since the last commit.
+# # It cannot undo changes that have already been committed.
+# # It works with INSERT, UPDATE, DELETE and other transactional operations.
+# # You don't need rollback after SELECT.
 
+# # Remember: commit() = Save changes. rollback() = Undo uncommitted changes.
 
 
-connection.close()
 
 
-#-------------------------------------------------------------------------
 
 
+# #----------------------------------------------------------------------
+# #----------------------------------------------------------------------
+# #----------------------------------------------------------------------
+# #----------------------------------------------------------------------
+# #----------------------------------------------------------------------
 
 
 
+# #                     EMPTY THE EXISTING TASK TABLE WITHOUT DELETING THE TASK TABLE ITSELF
 
 
+# connection.execute('DELETE FROM tasks')
 
+# connection.commit()
 
 
+# print("Remaining tasks:", connection.execute('select * from tasks').fetchall())
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#--------------------------------------------------------
 
 
 
