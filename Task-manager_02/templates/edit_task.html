@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Edit Task | Task Manager{% endblock %}
+
+{% block content %}
+
+<header id="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Edit Your Task</h1>
+        </div>
+    </div>
+</header>
+
+<form action="{{ url_for('edit_task', task_id=task.id) }}" method="POST">
+
+    <fieldset>
+        <legend>Edit Task</legend>
+
+        <label>Title:</label>
+        <input type="text" name="title" value="{{ task.title }}">
+
+        <label>Description:</label>
+        <textarea name="description">{{ task.description }}</textarea>
+
+        <label>Priority:</label>
+        <select name="priority">
+            <option value="High" {% if task.priority == 'High' %}selected{% endif %}>High</option>
+            <option value="Medium" {% if task.priority == 'Medium' %}selected{% endif %}>Medium</option>
+            <option value="Low" {% if task.priority == 'Low' %}selected{% endif %}>Low</option>
+        </select>
+
+        <label>Due Date:</label>
+        <input type="date" name="due_date" value="{{ task.due_date }}">
+
+        <label>Status:</label>
+        <select name="status">
+            <option value="Pending" {% if task.status == 'Pending' %}selected{% endif %}>Pending</option>
+            <option value="In Progress" {% if task.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+            <option value="Completed" {% if task.status == 'Completed' %}selected{% endif %}>Completed</option>
+        </select>
+
+    </fieldset>
+
+    <button type="submit">Save Changes</button>
+
+</form>
+
+{% endblock %}
