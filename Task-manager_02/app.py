@@ -92,13 +92,6 @@ def view_task():
 
     connection.close()
 
-
-
-
-
-
-
-    
     return render_template('view_task.html', tasks=tasks)
 
 
@@ -128,12 +121,6 @@ def task_detail(task_id):
         abort(404)
 
     return render_template('task_detail.html', task=task)
-
-
-
-
-
-
 
 
 
