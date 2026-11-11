@@ -117,6 +117,7 @@ def view_task():
 
 ###############################################################
 
+
 @app.route('/task/<int:task_id>')
 def task_detail(task_id):
 
