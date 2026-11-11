@@ -25,7 +25,8 @@ def add_task():
 
     ##########################################
 #      RETRIEVING FORM VALUES THROUGH POST
-    ########################################## 
+    
+
 
     if request.method == 'POST':
         title = request.form.get('title')
@@ -34,6 +35,8 @@ def add_task():
         due_date = request.form.get('date')
         status = request.form.get('status')
 
+
+
         ###################################
     #            INPUT VALIDATION 
     
@@ -41,11 +44,11 @@ def add_task():
         if not title or not title.strip():
             return render_template('add_task.html', error = "Task title is required !! ")
 
-        if not priority not in ['High','Medium','Low']:
+        if  priority not in ['High','Medium','Low']:
             return render_template('add_task.html', error="Invalid priority")
 
-        if not status not in['Pending','In Progress','Completed']:
-            return render_template('add_task.html', error="Invalid status")
+        if  status not in['Pending','In Progress','Completed']:
+            return render_template('add_task.html', error="Invalid status", title=title, description=description, priority=priority, due_date=due_date, status=status)
 
 
 
@@ -228,12 +231,15 @@ def delete_task(task_id):
     return redirect(url_for('view_task'))
 
 
+
+
+
+
+
+
+
+
 ################################################################
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
 

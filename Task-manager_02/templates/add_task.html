@@ -1,97 +1,128 @@
+
 {% extends 'base.html' %}
 
 {% block page_title %} Add Task | Task Manager {% endblock %}
 
+{% block content %}
 
-    {% block content %}
+<!-- HEADER / HERO -->
 
-
-    <!-- HEADER / HERO  -->
-
-    <header id="hero">
-        <div class="hero-container">
-            <div class="hero-text">
-                <h1>Add Your Tasks</h1>
-            </div>
+<header id="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Add Your Tasks</h1>
         </div>
-    </header>
+    </div>
+</header>
 
+<!-- FORM SECTION -->
 
+<section id="task-form">
+    <div class="form-container">
 
+        <form action="{{ url_for('add_task') }}" method="POST">
 
-
-    <!-- FORM SECTION -->
-        <section id="task-form">
-        <div class="form-container">
-            <form action="{{url_for('add_task')}}" method="POST">
-
-                {% if error %}
-                    <p class="error">{{ error }}</p>
-                {% endif %}
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
 
             <fieldset class="task-details">
 
                 <legend>Add Your Tasks</legend>
 
+                <!-- TITLE -->
+                <div class="field-group">
+                    <label for="title">Title:</label>
 
-                    <div class="field-group">
-                        <label>Title : </label>
-                        <input type="text" name="title" id="title" placeholder="Enter your task's title">
-                    </div>
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        placeholder="Enter your task's title"
+                        value="{{ title or '' }}"
+                    >
+                </div>
 
+                <!-- DESCRIPTION -->
+                <div class="field-group">
+                    <label for="desc">Description:</label>
 
+                    <textarea
+                        name="desc"
+                        id="desc"
+                        placeholder="Enter your task's description"
+                    >{{ description or '' }}</textarea>
+                </div>
 
+                <!-- PRIORITY -->
+                <div class="field-group">
+                    <label for="priority">Priority:</label>
 
-                    <div class="field-group">
-                        <label>Description : </label>
-                        <textarea  name="desc" id="desc" placeholder="Enter your task's description"></textarea>
-                    </div>
+                    <select name="priority" id="priority">
 
+                        <option value="" disabled {% if not priority %}selected{% endif %}>
+                            Select Priority
+                        </option>
 
+                        <option value="High" {% if priority == 'High' %}selected{% endif %}>
+                            High
+                        </option>
 
+                        <option value="Medium" {% if priority == 'Medium' %}selected{% endif %}>
+                            Medium
+                        </option>
 
-                    <div class="field-group">
-                        <label>Priority : </label>
-                        <select name="priority" id="priority" >
-                            <option value=" " selected disabled>Select Priority</option>
-                            <option value="High">High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
-                    </div>
+                        <option value="Low" {% if priority == 'Low' %}selected{% endif %}>
+                            Low
+                        </option>
 
+                    </select>
+                </div>
 
+                <!-- DUE DATE -->
+                <div class="field-group">
+                    <label for="date">Due Date:</label>
 
+                    <input
+                        type="date"
+                        name="date"
+                        id="date"
+                        value="{{ due_date or '' }}"
+                    >
+                </div>
 
-                    <div class="field-group">
-                        <label>Due Date : </label>
-                        <input type="date" name="date" id="date">
-                    </div>
+                <!-- STATUS -->
+                <div class="field-group">
+                    <label for="status">Status:</label>
 
+                    <select id="status" name="status">
 
-                    <div class="field-group">
-                        <label for="status">Status : </label>
-                        <select id="status" name="status">
-                            <option value="" selected disabled>Select Status</option>
-                            <option value="Pending">Pending</option>
-                            <option value="In Progress">
-                                In Progress
-                            </option>
-                            <option value="Completed">Completed</option>
-                        </select>
-                    </div>
+                        <option value="" disabled {% if not status %}selected{% endif %}>
+                            Select Status
+                        </option>
 
+                        <option value="Pending" {% if status == 'Pending' %}selected{% endif %}>
+                            Pending
+                        </option>
 
+                        <option value="In Progress" {% if status == 'In Progress' %}selected{% endif %}>
+                            In Progress
+                        </option>
 
-                </fieldset>
+                        <option value="Completed" {% if status == 'Completed' %}selected{% endif %}>
+                            Completed
+                        </option>
 
-                <button type="submit">Add Task</button>
+                    </select>
+                </div>
 
+            </fieldset>
 
+            <button type="submit">Add Task</button>
 
-            </form>
+        </form>
 
-        </div>
-        </section>
+    </div>
+</section>
 
-    {% endblock %}
+{% endblock %}
