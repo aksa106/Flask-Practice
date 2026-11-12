@@ -19,65 +19,76 @@ def home():
 #####################################################
 
 
-
-@app.route('/add_task', methods =['GET','POST'])
+@app.route('/add_task', methods=['GET', 'POST'])
 def add_task():
 
-    ##########################################
-#      RETRIEVING FORM VALUES THROUGH POST
-    
-
-
     if request.method == 'POST':
+
+        # RETRIEVE FORM VALUES
+
         title = request.form.get('title')
         description = request.form.get('desc')
         priority = request.form.get('priority')
         due_date = request.form.get('date')
         status = request.form.get('status')
 
+        # INPUT VALIDATION
 
-
-        ###################################
-    #            INPUT VALIDATION 
-    
-
+        # Title validation
         if not title or not title.strip():
-            return render_template('add_task.html', error = "Task title is required !! ")
+            return render_template(
+                'add_task.html',
+                error="Task title is required!",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
 
-        if  priority not in ['High','Medium','Low']:
-            return render_template('add_task.html', error="Invalid priority")
+        # Priority validation
+        if priority not in ['High', 'Medium', 'Low']:
+            return render_template(
+                'add_task.html',
+                error="Invalid priority",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
 
-        if  status not in['Pending','In Progress','Completed']:
-            return render_template('add_task.html', error="Invalid status", title=title, description=description, priority=priority, due_date=due_date, status=status)
+        # Status validation
+        if status not in ['Pending', 'In Progress', 'Completed']:
+            return render_template(
+                'add_task.html',
+                error="Invalid status",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
 
-
-
-        ###################################
-    #   AFTER RETRIEVING VALUES, CONNECT THE
-    #   DB 
-        #####################################
+        # DATABASE INSERTION
 
         connection = get_db_connection()
 
         connection.execute(
             """
             INSERT INTO tasks(title, description, priority, due_date, status)
-            VALUES(?,?,?,?,?)
+            VALUES (?, ?, ?, ?, ?)
             """,
-            (title, description, priority, due_date, status)
+            (title.strip(), description, priority, due_date, status)
         )
-       
+
         connection.commit()
         connection.close()
- 
-
-
-
 
         return redirect(url_for('view_task'))
 
+    # GET REQUEST
     return render_template('add_task.html')
-
 
 
 
