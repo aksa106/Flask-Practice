@@ -12,32 +12,45 @@
     </div>
 </header>
 
+<div class = "container">
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+</div>
+
 <form action="{{ url_for('edit_task', task_id=task.id) }}" method="POST">
 
     <fieldset>
         <legend>Edit Task</legend>
 
         <label>Title:</label>
-        <input type="text" name="title" value="{{ task.title }}">
+        <input type="text" name="title" value="{{ title if title is defined else task.title}}">
 
         <label>Description:</label>
-        <textarea name="description">{{ task.description }}</textarea>
+        <textarea name="description">{{ description if description is defined else task.description }}</textarea>
 
         <label>Priority:</label>
+
+        {% set current_priority = priority if priority is defined else task.priority %}
+
         <select name="priority">
-            <option value="High" {% if task.priority == 'High' %}selected{% endif %}>High</option>
-            <option value="Medium" {% if task.priority == 'Medium' %}selected{% endif %}>Medium</option>
-            <option value="Low" {% if task.priority == 'Low' %}selected{% endif %}>Low</option>
+            <option value="High" {% if current_priority == 'High' %}selected{% endif %}>High</option>
+            <option value="Medium" {% if current_priority  == 'Medium' %}selected{% endif %}>Medium</option>
+            <option value="Low" {% if current_priority  == 'Low' %}selected{% endif %}>Low</option>
         </select>
 
         <label>Due Date:</label>
-        <input type="date" name="due_date" value="{{ task.due_date }}">
+        <input type="date" name="due_date" value="{{ due_date if due_date is defined else task.due_date }}">
+
+        {% set current_status = status if status is defined else task.status %}
 
         <label>Status:</label>
         <select name="status">
-            <option value="Pending" {% if task.status == 'Pending' %}selected{% endif %}>Pending</option>
-            <option value="In Progress" {% if task.status == 'In Progress' %}selected{% endif %}>In Progress</option>
-            <option value="Completed" {% if task.status == 'Completed' %}selected{% endif %}>Completed</option>
+            <option value="Pending" {% if current_status == 'Pending' %}selected{% endif %}>Pending</option>
+
+            <option value="In Progress" {% if current_status == 'In Progress' %}selected{% endif %}>In Progress</option>
+
+            <option value="Completed" {% if current_status == 'Completed' %}selected{% endif %}>Completed</option>
         </select>
 
     </fieldset>

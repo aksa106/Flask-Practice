@@ -1,4 +1,5 @@
 from database import get_db_connection
+from datetime import date
 from flask import  Flask , render_template, request, url_for, redirect, abort
 
 app = Flask(__name__)
@@ -69,6 +70,48 @@ def add_task():
                 due_date=due_date,
                 status=status
             )
+
+        # Due Date Validation
+        if not due_date:
+            return render_template(
+                'add_task.html',
+                error = "Due Date is required",
+                title = title,
+                description = description,
+                priority = priority,
+                due_date=due_date,
+                status=status
+            )
+
+
+    try : 
+
+
+        # Due-Date validation : past date 
+        if date.fromisoformat(due_date) < date.today():
+            return render_template(
+                'add_task.html',
+                error = "Due date cannot be in the past!",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
+    except ValueError:
+        return render_template(
+            'add_task.html',
+            error = "Invalid date format!",
+            title = title ,
+            description=description,
+            priority=priority,
+            due_date=due_date,
+            status=status
+        )
+
+
+
+
 
         # DATABASE INSERTION
 
@@ -188,13 +231,81 @@ def edit_task(task_id):
         due_date = request.form.get('due_date')
         status = request.form.get('status')
 
+        # INPUT VALIDATION
+
+        # Title validation
+        if not title or not title.strip():
+            return render_template(
+                'edit_task.html',
+                task=task,
+                error="Task title is required!",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
+
+        # Priority validation
+        if priority not in ['High', 'Medium', 'Low']:
+            return render_template(
+                'edit_task.html',
+                task=task,
+                error="Invalid priority",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
+
+        # Status validation
+        if status not in ['Pending', 'In Progress', 'Completed']:
+            return render_template(
+                'edit_task.html',
+                task=task,
+                error="Invalid status",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
+
+        # Due Date Validation
+        if not due_date:
+            return render_template(
+                'edit_task.html',
+                task=task,
+                error = "Due Date is required",
+                title = title,
+                description = description,
+                priority = priority,
+                due_date=due_date,
+                status=status
+            )
+        
+        # Due-Date validation : past date 
+        if date.fromisoformat(due_date) < date.today():
+            return render_template(
+                'edit_task.html',
+                task=task,
+                error = "Due date cannot be in the past!",
+                title=title,
+                description=description,
+                priority=priority,
+                due_date=due_date,
+                status=status
+            )
+
+
         connection.execute(
             """
             UPDATE tasks 
             SET title = ?, description =?, priority=?, due_date=?, status=? 
             WHERE id = ?
 
-            """, (title, description, priority, due_date, status, task_id)
+            """, (title.strip(), description, priority, due_date, status, task_id)
 
         )
 
